@@ -11,6 +11,10 @@ endif
 " Don't load another plugin for this buffer
 let b:loaded_hlasm = 1
 
+" Set ColorColumn options
+highlight ColorColumn ctermbg=233 guibg=#2c2d27
+let &colorcolumn="16,72,80,".join(range(120,999),",")
+
 " Using line continuation here.
 let s:cpo_save = &cpo
 set cpo-=C

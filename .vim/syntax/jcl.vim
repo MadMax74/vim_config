@@ -11,6 +11,10 @@ elseif exists("b:current_syntax")
   finish
 endif
 
+" Set ColorColumn options
+highlight ColorColumn ctermbg=233 guibg=#2c2d27
+let &colorcolumn="16,72,80,".join(range(120,999),",")
+
 syn case ignore
 
 syn keyword jclKwd pgm proc class dsn[ame] msgclass space disp contained

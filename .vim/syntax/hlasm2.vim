@@ -27,6 +27,9 @@ if version < 600
 elseif exists("b:current_syntax")
  finish
 endif
+" Set ColorColumn options
+highlight ColorColumn ctermbg=233 guibg=#2c2d27
+let &colorcolumn="16,72,80,".join(range(120,999),",")
 syn case ignore
 " ASCII: #(35),$(36),%(37),&(38),0-9(48-57),@(64),A-Z(65-90),_(95),a-z(97-122)
 "syn iskeyword 35,36,38,48-57,64,65-90,95,97-122
@@ -63,7 +66,7 @@ syn keyword xInstruction x xc xg xgr xgrk xi xihf xilf xiy xr xrk xsch xy  skipw
 syn keyword xInstruction zap  skipwhite nextgroup=xOperand,xOperandStr
 
 syn keyword xDirective acontrol actr adata aeject agob ago aif aifb ainsert alias amode anop aread aspace  skipwhite nextgroup=xOperand,xOperandStr
-syn keyword xDerictive cattr ccw ccw0 ccw1 ceject cnop com copy csect cxd  skipwhite nextgroup=xOperand,xOperandStr
+syn keyword xDirective cattr ccw ccw0 ccw1 ceject cnop com copy csect cxd  skipwhite nextgroup=xOperand,xOperandStr
 syn keyword xDirective dc drop dsect ds dxd  skipwhite nextgroup=xOperand,xOperandStr
 syn keyword xDirective eject end entry equ exitctl extrn  skipwhite nextgroup=xOperand,xOperandStr
 syn keyword xDirective gbla gblb gblc  skipwhite nextgroup=xOperand,xOperandStr
@@ -164,9 +167,9 @@ syn match   xString     /[ ,]'\([^']\|''\)*'/ contained contains=xSymbol1
 syn match   xString1    /'\([^']\|''\)*'/ contained contains=xSymbol1
 
 "syn region xCommentBlock start=/@@combeg/ skip=/\n/ end=/@@comend/
-syn match xLineComment  /^\.\=\*.*\%<73c/
-syn match xContinue     /\%72c\S/
 syn match xLabel        /^\([@#$&.]\?[0-9a-z@$#_.]\+\)\|\s\{1,}/ skipwhite nextgroup=xOperation 
+syn match xLineComment  /^\.\=\*.*\%<73c/
+syn match xContinue     /\%71c\S/
 syn match xSpaceAndOp1  /^ \{1,14}/ skipwhite nextgroup=xOperation
 syn match xOperation    /[0-9a-z@$#&_]\+/ contained contains=xInstruction,xDirective,xBranch,xMacro skipwhite  nextgroup=xOperand,xOperandStr
 syn match xContinueLine /^ \{15}/ contains=xOperation nextgroup=xOperand

@@ -27,6 +27,9 @@ if version < 600
 elseif exists("b:current_syntax")
  finish
 endif
+" Set ColorColumn options
+highlight ColorColumn ctermbg=233 guibg=#2c2d27
+let &colorcolumn="16,72,80,".join(range(120,999),",")
 syn case ignore
 " ASCII: #(35),$(36),%(37),&(38),0-9(48-57),@(64),A-Z(65-90),_(95),a-z(97-122)
 "syn iskeyword 35,36,38,48-57,64,65-90,95,97-122

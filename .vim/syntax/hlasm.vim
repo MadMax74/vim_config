@@ -10,6 +10,11 @@ if version < 600
 elseif exists("b:current_syntax")
     finish
 endif
+
+" Set ColorColumn options
+highlight ColorColumn ctermbg=233 guibg=#2c2d27
+"let &colorcolumn="16,72,80,".join(range(120,999),",")
+
 syn case ignore
 
 syn iskeyword 35,36,38,48-57,64,65-90,95,97-122
@@ -30,7 +35,7 @@ syn keyword xInstruction o oc og ogr ogrk oi oihf oihh oihl oilf oilh oill oiy o
 syn keyword xInstruction pack palb pc pcc pckmo pfd pfdrl pfmf pfpo pgin pgout pka pku plo popcnt ppa ppno pr pt ptf ptff pti ptlb contained
 syn keyword xInstruction qadtr qaxtr contained
 syn keyword xInstruction rchp risbg risbgn risbhg risblg rll rllg rnsbg rosbg rp rrbe rrbm rrdtr rrxtr rsch rxsbg contained
-syn keyword xInstruction s sac sacf sal sam24 sam31 sam64 sar schm sck sckc sckpf sd sdb sdbr sdr sdtr sdtra se seb sebr ser sfasr sfpc sg sgf sgfr sgr sgrk sh shhhr shhlr shy sie sigp sl sla slag slak slb slbg slbgr slbr slda sldl sldt slfi slg slgf slgfi slgfr slgr slgrk slhhhr slhhlr sll sllg sllk slr slrk slxt sly sp spka spm spt spx sqd sqdb sqdbr sqdr sqe sqeb sqebr sqer sqxbr sqxr sr sra srag srak srda srdl srdt srk srl srlg srlk srnm srnmb srnmt srp srst srstu srxt ssair ssar ssch sske ssm st stam stamy stap stc stch stck stckc stcke stckf stcm stcmh stcmy stcps stcrw stctg stctl srcy std stdy ste stey stfh stfl stfle stfpc stg stgrl sth sthh sthrl sthy stidp stm stmg stmh stmy stnsm stoc stocfh stocg stosm stpq stpt stpx strag strl strv strvg strvh stsch stsi stura sturg sty su sur svc sw swr sxbr sxr sxtr sxtra sy contained
+syn keyword xInstruction s sac sacf sal sam24 sam31 sam64 sar schm sck sckc sckpf sd sdb sdbr sdr sdtr sdtra se seb sebr ser sfasr sfpc sg sgf sgfr sgr sgrk sh shhhr shhlr shy sie sigp sl sla slag slak slb slbg slbgr slbr slda sldl sldt slfi slg slgf slgfi slgfr slgr slgrk slhhhr slhhlr sll sllg sllk slr slrk slxt sly sp spka spm spt spx sqd sqdb sqdbr sqdr sqe sqeb sqebr sqer sqxbr sqxr sr sra srag srak srda srdl srdt srk srl srlg srlk srnm srnmb srnmt srp srst srstu srxt ssair ssar ssch sske ssm st stam stamy stap stc stch stck stckc stcke stckf stcm stcmh stcmy stcps stcrw stctg stctl stcy srcy std stdy ste stey stfh stfl stfle stfpc stg stgrl sth sthh sthrl sthy stidp stm stmg stmh stmy stnsm stoc stocfh stocg stosm stpq stpt stpx strag strl strv strvg strvh stsch stsi stura sturg sty su sur svc sw swr sxbr sxr sxtr sxtra sy contained
 syn keyword xInstruction tabort tam tar tb tbdr tbedr tbegin tbeginc tcdb tceb tcxb tdcdt tdcet tdcxt tdgdt tdget tdgxt tend thder thdr tm tmh tmhh tmhl tml tmlh tmll tmy tptpi tprot tr trace tracg trap2 trap4 tre troo trot trt trte trto trtr trtre trtt ts tsch contained
 syn keyword xInstruction unpk unpka unpku upt contained
 syn keyword xInstruction va vac vacc vaccc vavg vavgl vcdg vcdlg cdeq vcgd vch vchl vcksn vclgd vclz vctz vec vecl verim verll verllv vesl veslv vesra vesrav vesrl vesrlv vfa vfae vfce vfch vfche vfd vfee vfene vfi vfm vfma vfms vfpso vfs vfsq vftci vgbm vgef vgfm vgfma vgm vistr vlc vlde vvleb vled vlef vleg vleh vleid vleif vleig vleih vlgv vll vllez vlm vlp vlr vlrep vlvgp vmae vmah vmal vmale vmalh vmalo vmao vme vmeh vml vmle vmlh vmlo vmn vmnl vmo vmrh vmrl vmx vmxl vn vnc vno vo vpdi vperm vpk vpkls vkps vpopct vrep vrepi vs vsbcbi vsbu vscbi vscef vsceg vseg vsel vsl vslb vsldb vsra vsrab vsrl vsrlb vst vsteb vstef vsteg vsteh vstl vstm vstrc vsum vsumg vsumq vtm vuph vupl vuplh vupll vx contained
@@ -39,7 +44,7 @@ syn keyword xInstruction x xc xg xgr xgrk xi xihf xilf xiy xr xrk xsch xy contai
 syn keyword xInstruction zap contained
 
 syn keyword xDirective acontrol actr adata aeject agob ago aif aifb ainsert alias amode anop aread aspace contained
-syn keyword xDerictive cattr ccw ccw0 ccw1 ceject cnop com copy csect cxd contained
+syn keyword xDirective cattr ccw ccw0 ccw1 ceject cnop com copy csect cxd contained
 syn keyword xDirective dc drop dsect ds dxd contained
 syn keyword xDirective eject end entry equ exitctl extrn contained
 syn keyword xDirective gbla gblb gblc contained
